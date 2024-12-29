@@ -54,7 +54,7 @@ function verifyOS(platform, architecture) {
     } else if (platform === "win32" && architecture.includes("x64")) {
         return "x86_64-pc-windows-msvc";
     } else if (platform === "linux" && architecture.includes("x64")) {
-        return this.detectLinuxDistro();
+        return detectLinuxDistro();
     }
 
     console.error("Unsupported OS or architecture. Galadriel CSS cannot run.");
