@@ -12,7 +12,9 @@ const patch = verifyOS(platform, architecture);
 if (patch !== null) {
     console.log("Starting installation of Galadriel CSS...");
 
-    const downloadUrl = `https://github.com/patrickgunnar/galadrielcss/releases/latest/download/galadrielcss-${patch}`;
+    const downloadUrl = `https://github.com/patrickgunnar/galadrielcss/releases/latest/download/galadrielcss-${patch}${
+        platform === "win32" ? ".exe" : ""
+    }`;
 
     console.log(`Downloading Galadriel CSS binary for: ${patch}`);
 
