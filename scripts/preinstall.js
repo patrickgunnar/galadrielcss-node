@@ -1,4 +1,4 @@
-const { mkdirSync, writeFileSync, chmodSync } = require("fs");
+const { mkdirSync, writeFileSync, chmodSync, existsSync } = require("fs");
 const { execSync } = require("child_process");
 const { resolve, dirname } = require("path");
 const request = require("sync-request");
@@ -42,10 +42,7 @@ if (patch !== null) {
 }
 
 function verifyOS(platform, architecture) {
-    console.log(
-        PRINT_TAB,
-        `Detecting OS and architecture: ${platform} - ${architecture}`
-    );
+    console.log(`Detecting OS and architecture: ${platform} - ${architecture}`);
 
     if (platform === "darwin") {
         return architecture.includes("x64")
